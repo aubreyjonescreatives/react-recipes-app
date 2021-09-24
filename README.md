@@ -33,7 +33,7 @@ the return data in my meals.json file. Here is example code from that file:
 ```
 
 
-## Continue to render your local API data using some combination of Cards, Avatars, List, etc. elements. These UI elements will be from the MUI version 5 pacakge.
+## Continue to render your local API data using some combination of Cards, Avatars, List, etc. elements. These UI elements will be from the MUI version 5 package.
 
 1. Material UI version 5! My website has cards, icons, lists, etc from this cutting edge new design system. For example: 
 
