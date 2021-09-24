@@ -35,7 +35,7 @@ the return data in my meals.json file. Here is example code from that file:
 
 ## Continue to render your local API data using some combination of Cards, Avatars, List, etc. elements. These UI elements will be from the MUI version 5 package.
 
-1. Material UI version 5! My website has cards, icons, lists, etc from this cutting edge new design system. For example: 
+1. Material UI version 5! My website has cards, icons, lists, etc. from this cutting edge new design system. Here is an example of what I import from Material UI 5: 
 
 ``` 
 import Card from '@mui/material/Card';
