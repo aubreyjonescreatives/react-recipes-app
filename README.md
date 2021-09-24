@@ -77,3 +77,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 ## Also submit the Netlify URL for where your application is being served live. (can be a custom domain if you hooked one up)
 
 1. Interested in checking out this project in action? Here is the live application link: 
+
+
+https://chefs-react-meals.netlify.app/
+
