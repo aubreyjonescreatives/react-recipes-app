@@ -23,13 +23,15 @@ const [favoriteMeal, setFavoriteMeal] = useState([])
 
 
 const addFavoriteMeal = (category) => {
-console.log(`${category} added to favorite Meals`)
+
 if (!favoriteMeal.includes(category.idCategory)) {
     setFavoriteMeal((prevState) => [ ...prevState, category.idCategory]) 
-
+    console.log(`The ${category.strCategory} meal category was added to your favorite Meals`)
 } else {
     setFavoriteMeal(() => {
+        console.log(`The ${category.strCategory} meal category was removed from your favorite Meals`)
         return favoriteMeal.filter((item) => item !== category.idCategory)
+       
     })
 }
 
