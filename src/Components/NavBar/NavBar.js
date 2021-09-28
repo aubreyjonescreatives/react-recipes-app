@@ -59,7 +59,7 @@ function NavBar() {
         <Tooltip title="Account settings">
           <IconButton onClick={handleClick} size="medium" sx={{ ml: 2,  justifyContent: "flex-end",
   alignItems: "flex-end" }}>
-            <Avatar sx={{ width:54, height: 54,  bgcolor: '#E71D36' }}>AJ</Avatar>
+            <Avatar sx={{ width:54, height: 54,  bgcolor: '#F6AA1C' }}>AJ</Avatar>
           </IconButton>
         </Tooltip>
       </Box>

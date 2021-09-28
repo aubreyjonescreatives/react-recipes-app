@@ -53,7 +53,6 @@ const [expanded, setExpanded] = React.useState(false);
 
 
   const handleShareMealClick = () => {
-    console.log("Thank you for sharing!")
     props.modalFunction()
   setShareMeal(!shareMeal)
   }
@@ -68,17 +67,8 @@ return (
 <>
 <Card sx={{ maxWidth: 345, margin: 2 }}>
       <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: '#E71D36' }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
         title={props.category.strCategory}
+        sx={{ color: '#2A7221', width: "20%", fontsize: "6px"}}
       />
       <CardMedia
         component="img"
@@ -91,12 +81,12 @@ return (
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites" onClick={handleFavoriteClick}>
           <FavoriteIcon 
-          sx={{ color: favorite ? '#E71D36' : '#2A7221'}}
+          sx={{ color: favorite ? '#087E8B' : '#F6AA1C'}}
           />
         </IconButton>
         <IconButton aria-label="share" onClick={handleShareMealClick}>
           <ShareIcon 
-          sx={{ color: shareMeal ? '#E71D36' : '#2A7221'}}
+          sx={{ color: shareMeal ? '#087E8B' : '#F6AA1C'}}
           />
         </IconButton>
         <ExpandMore

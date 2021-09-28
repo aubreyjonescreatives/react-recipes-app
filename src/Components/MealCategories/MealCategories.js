@@ -10,7 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
-
+import Button from '@mui/material/Button';
 
 
 const style = {
@@ -91,6 +91,11 @@ const handleshareSocialClickI = () => {
     }
       
         }
+
+
+const handlesocialSubmit = () => {
+    console.log("Thank you for sharing!")
+}
         
     
 
@@ -230,10 +235,16 @@ return (
             
             />
           </IconButton>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          <Button
+         sx={{ fontSize: 24, 
+            color: 'white', 
+            bgcolor: '#2A7221'
+            }}
+            onClick={handlesocialSubmit}
+          
+        >Share</Button>
         </Box>
+       
       </Modal>
 
 </Container>
