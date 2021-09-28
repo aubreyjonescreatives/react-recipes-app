@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NavLink } from 'react-router-dom'; 
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
@@ -35,34 +36,30 @@ function NavBar() {
          display: 'flex', 
          alignItems: 'center', 
          textAlign: 'center', 
-         bgcolor: '#84DD63', 
-         height: 70
+         bgcolor: '#2A7221', 
+         height: 70, 
+         width: '100%'
          
          }}>
-        <Typography sx=
+        <NavLink to ='/'><Typography sx=
         {{ minWidth: 100, 
           padding: 4,
-          fontSize: 24
+          fontSize: 24,
+          color: 'white'
         
-        }} href="#">The Chef's Menu</Typography>
-        <Typography sx=
-        {{ minWidth: 100, 
-          padding: 4,
-          fontSize: 20
-        }} href="#">Meal Categories</Typography>
-          <Typography sx=
-        {{ minWidth: 100, 
-          padding: 4,
-          fontSize: 20
-        }} href="#">Meals by First Letter</Typography>
-           <Typography sx=
+        }}>The Chef's Menu</Typography></NavLink>
+           
+           
+        <NavLink to="/MealFavorites"><Typography sx=
         {{ minWidth: 100,
           padding: 4, 
-          fontSize: 20
-        }} href="#">Favorite Meals</Typography>
+          fontSize: 20, 
+          color: 'white'
+        }} href="/MealFavorites">Favorite Meals</Typography></NavLink>
         <Tooltip title="Account settings">
-          <IconButton onClick={handleClick} size="medium" sx={{ ml: 2 }}>
-            <Avatar sx={{ width:54, height: 54 }}>MJ</Avatar>
+          <IconButton onClick={handleClick} size="medium" sx={{ ml: 2,  justifyContent: "flex-end",
+  alignItems: "flex-end" }}>
+            <Avatar sx={{ width:54, height: 54,  bgcolor: '#E71D36' }}>AJ</Avatar>
           </IconButton>
         </Tooltip>
       </Box>

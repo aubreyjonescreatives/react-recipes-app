@@ -1,4 +1,5 @@
-import React from 'react'; 
+import * as React from 'react';
+
 import '../../data/meals.json'
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -10,7 +11,6 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -31,11 +31,32 @@ const ExpandMore = styled((props) => {
 
 const MealCard = (props) => {
 
+  const [favorite, setFavorite] = React.useState(false)
+
+
+  const handleFavoriteClick = () => {
+  //  console.log(props.idCategory)
+  console.log("Hello Favorite")
+  setFavorite(!favorite)
+  props.addFavoriteMealFunction(props.idCategory)
+  }
+  
+
 const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+
+  const [shareMeal, setShareMeal] = React.useState(false); 
+
+
+  const handleShareMealClick = () => {
+    console.log("Thank you for sharing!")
+  //  props.modalFunction()
+  setShareMeal(!shareMeal)
+  }
 
 
 
@@ -45,10 +66,10 @@ const [expanded, setExpanded] = React.useState(false);
 
 return (
 <>
-<Card sx={{ maxWidth: 345, margin: 2 }} key={props.idCategory}>
+<Card sx={{ maxWidth: 345, margin: 2 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          <Avatar sx={{ bgcolor: '#E71D36' }} aria-label="recipe">
             R
           </Avatar>
         }
@@ -68,11 +89,15 @@ return (
       <CardContent>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+        <IconButton aria-label="add to favorites" onClick={handleFavoriteClick}>
+          <FavoriteIcon 
+          sx={{ color: favorite ? '#E71D36' : '#2A7221'}}
+          />
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
+        <IconButton aria-label="share" onClick={handleShareMealClick}>
+          <ShareIcon 
+          sx={{ color: shareMeal ? '#E71D36' : '#2A7221'}}
+          />
         </IconButton>
         <ExpandMore
           expand={expanded}
@@ -85,7 +110,7 @@ return (
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Expanded Description:</Typography>
+          <Typography paragraph>Description:</Typography>
           <Typography paragraph>
           {props.strCategoryDescription}
           </Typography>
