@@ -12,21 +12,27 @@ import Typography from '@mui/material/Typography';
 const MealCategories = () => {
 
 
-const idCategory = ["2", "4"]
+//const idCategory = ["2", "4"]
 
 
 
 const [open, setOpen] = useState(false)
 const handleOpen = () => setOpen(true)
 const handleClose = () => setOpen(false) 
-const [favoriteMeal, setFavoriteMeal] = useState(idCategory)
+const [favoriteMeal, setFavoriteMeal] = useState([])
 
 
-const addFavoriteMeal = (idCategory) => {
-console.log(`${idCategory} added to favorite Meals`)
-setFavoriteMeal((prevState) => {
-    return [ ...prevState, idCategory]
-})
+const addFavoriteMeal = (category) => {
+console.log(`${category} added to favorite Meals`)
+if (!favoriteMeal.includes(category.idCategory)) {
+    setFavoriteMeal((prevState) => [ ...prevState, category.idCategory]) 
+
+} else {
+    setFavoriteMeal(() => {
+        return favoriteMeal.filter((item) => item !== category.idCategory)
+    })
+}
+
 }
 
 const mealCats = theCategories.categories
@@ -65,9 +71,9 @@ return (
 <h1 className="m-c-header">Meals By Category</h1>
 
 
-{favoriteMeal.map((idCategory) => {
+{favoriteMeal && favoriteMeal.map((idCategory) => {
       return (
-       <p>{idCategory}</p>
+       <p key={idCategory}>{idCategory}</p>
   
       )
       
@@ -75,16 +81,16 @@ return (
 
 <Container className="containerAll">
   
-{mealData.mealList.map((mCategories) => {
+{mealData.mealList.map((category) => {
     return (
 
         
 
         <MealCard
-        key={mCategories.idCategory}
+        key={category.idCategory}
         addFavoriteMealFunction={addFavoriteMeal}
         modalFunction={handleOpen}
-        {...mCategories}
+        category={{...category}}
         // id={mCategories.id}
         // strCategoryThumb={mCategories.strCategoryThumb}
         // strCategory={mCategories.strCategory} 

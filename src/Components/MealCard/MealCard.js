@@ -38,7 +38,7 @@ const MealCard = (props) => {
   //  console.log(props.idCategory)
   console.log("Hello Favorite")
   setFavorite(!favorite)
-  props.addFavoriteMealFunction(props.idCategory)
+  props.addFavoriteMealFunction(props.category)
   }
   
 
@@ -78,13 +78,13 @@ return (
             <MoreVertIcon />
           </IconButton>
         }
-        title={props.strCategory}
+        title={props.category.strCategory}
       />
       <CardMedia
         component="img"
         height="194"
-        image={`${props.strCategoryThumb}`}
-        alt={props.strCategory}
+        image={`${props.category.strCategoryThumb}`}
+        alt={props.category.strCategory}
       />
       <CardContent>
       </CardContent>
@@ -104,7 +104,7 @@ return (
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
-        > {props.strCategory} Description
+        > {props.category.strCategory} Description
           <ExpandMoreIcon />
         </ExpandMore>
       </CardActions>
@@ -112,7 +112,7 @@ return (
         <CardContent>
           <Typography paragraph>Description:</Typography>
           <Typography paragraph>
-          {props.strCategoryDescription}
+          {props.category.strCategoryDescription}
           </Typography>
         </CardContent>
       </Collapse>
