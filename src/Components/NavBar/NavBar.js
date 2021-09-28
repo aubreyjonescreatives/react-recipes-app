@@ -45,8 +45,8 @@ function NavBar() {
         {{ minWidth: 100, 
           padding: 4,
           fontSize: 24,
-          color: 'white'
-        
+          color: 'white',
+          textDecoration: "none"
         }}>The Chef's Menu</Typography></NavLink>
            
            
@@ -54,12 +54,13 @@ function NavBar() {
         {{ minWidth: 100,
           padding: 4, 
           fontSize: 20, 
-          color: 'white'
+          color: 'white', 
+          textDecoration: "none"
         }} href="/MealFavorites">Favorite Meals</Typography></NavLink>
         <Tooltip title="Account settings">
           <IconButton onClick={handleClick} size="medium" sx={{ ml: 2,  justifyContent: "flex-end",
   alignItems: "flex-end" }}>
-            <Avatar sx={{ width:54, height: 54,  bgcolor: '#F6AA1C' }}>AJ</Avatar>
+            <Avatar sx={{ width:54, height: 54,  bgcolor: '#4C86A8' }}>AJ</Avatar>
           </IconButton>
         </Tooltip>
       </Box>
