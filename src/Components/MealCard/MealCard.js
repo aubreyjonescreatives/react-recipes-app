@@ -54,7 +54,7 @@ const [expanded, setExpanded] = React.useState(false);
 
   const handleShareMealClick = () => {
     console.log("Thank you for sharing!")
-  //  props.modalFunction()
+    props.modalFunction()
   setShareMeal(!shareMeal)
   }
 
