@@ -37,17 +37,61 @@ const [open, setOpen] = useState(false)
 const handleOpen = () => setOpen(true)
 const handleClose = () => setOpen(false) 
 const [favoriteMeal, setFavoriteMeal] = useState([])
-const [shareSocial, setshareSocial] = React.useState(false)
+const [shareFB, setshareFB] = useState(false)
+const [shareT, setshareT] = useState(false)
+const [shareI, setshareI] = useState(false)
 
 
-
-
-const handleshareSocialClick = () => {
-    //  console.log(props.idCategory)
-    console.log("Would you like to share on this platform?")
-    setshareSocial(!shareSocial)
-   // props.addFavoriteMealFunction(props.category)
+const handleshareSocialClickFB = () => {
+  
+if (shareFB == true) {
+    setshareFB() 
+    console.log(`We won't share on Facebook`)
+} else {
+    console.log(`Are you sure you want to share this meal on Facebook?`)
+       
+        return setshareFB(!shareFB)
+       
+    
+}
+  
     }
+
+    
+
+const handleshareSocialClickT = () => {
+  
+    if (shareT == true) {
+        setshareT() 
+        console.log(`We won't share on Twitter`)
+    } else {
+        console.log(`Are you sure you want to share this meal on Twitter?`)
+           
+            return setshareT(!shareT)
+           
+        
+    }
+      
+        }
+    
+        
+        
+
+const handleshareSocialClickI = () => {
+  
+    if (shareI == true) {
+        setshareI() 
+        console.log(`We won't share on Instagram`)
+    } else {
+        console.log(`Are you sure you want to share this meal on Instagram?`)
+           
+            return setshareI(!shareI)
+           
+        
+    }
+      
+        }
+        
     
 
 
@@ -161,18 +205,18 @@ return (
         >
             <FacebookIcon
             sx={{ fontSize: 42, 
-            color: shareSocial ? '#E71D36' : '#2A7221'
+            color: shareFB ? '#E71D36' : '#2A7221'
             }}
-            onClick={handleshareSocialClick}
+            onClick={handleshareSocialClickFB}
             
             
             />
           </IconButton>
           <IconButton aria-label="settings">
             <TwitterIcon 
-             onClick={handleshareSocialClick}
+             onClick={handleshareSocialClickT}
             sx={{ fontSize: 42, 
-            color: shareSocial ? '#E71D36' : '#2A7221'
+            color: shareT ? '#E71D36' : '#2A7221'
             
             }}
             />
@@ -180,9 +224,9 @@ return (
           <IconButton aria-label="settings">
             <InstagramIcon 
             sx={{ fontSize: 42, 
-                color: shareSocial ? '#E71D36' : '#2A7221'
+                color: shareI ? '#E71D36' : '#2A7221'
                 }}
-                onClick={handleshareSocialClick}
+                onClick={handleshareSocialClickI}
             
             />
           </IconButton>
